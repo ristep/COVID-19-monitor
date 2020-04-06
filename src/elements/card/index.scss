@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Noto+Serif:400,400i,700,700i|Open+Sans+Condensed:300|Roboto+Mono:300,300i,400,400i,500,500i,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');@import url('https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Noto+Serif:400,400i,700,700i|Open+Sans+Condensed:300|Roboto+Mono:300,300i,400,400i,500,500i,700|Tangerine&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
+
+.card {
+	margin-left: 14px;
+	margin-top: 14px;
+	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+	width: 350px;
+	height: 360px;
+	/* position: relative; */
+	border-radius: 6px;
+	box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+	box-shadow: 0px 20px 10px -8px rgba(0, 0, 0, 0.2);
+	transform: scale(1.05, 1.05);
+}
+
+.cardTop {
+	background-size: auto;
+	background-position: top;
+	background-repeat: no-repeat;
+	width: 100%;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.cardInfo {
+	background-color: whitesmoke; 
+	padding: 8px; 
+} 
+
+.title {
+	font-family: 'Caveat', cursive;
+	font-size: 22px;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #868686;
+}
+
+.description {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 18px;
+	text-shadow: 4px 4px 4px #aaa;
+	color: #4d0303;
+}
+
+.cardBottom button {
+	border: none;
+	outline: 0;
+	color: white;
+	background-color: rgb(170, 140, 56);
+	text-align: center;
+	cursor: pointer;
+	width: 50%;
+	position: relative;
+	right: 0px;
+}
+
+/* 
+font-family: 'Caveat', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Roboto Mono', monospace; 
+*/

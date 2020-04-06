@@ -1,0 +1,121 @@
+.box {
+	margin-left: 14px;
+	margin-top: 14px;
+	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  display: flex;
+  flex-flow: column;
+	width: 320px;
+	height: auto;
+	border:hidden;
+	border-bottom-right-radius: 16px;
+	border-top-left-radius: 16px;
+	box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.2);
+}
+
+.boxTop{
+	display: flex;
+	align-items: flex-end;
+	border-top-left-radius: 16px;
+	min-height: 258px;
+}
+
+.box:hover {
+	box-shadow: 0px 16px 10px -4px rgba(0, 0, 0, 0.2);
+	transform: scale(1.005, 1.005);
+}
+
+/* .box .row {
+  border: 1px grey;
+} */
+
+.box .row.header {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.box .row.content {
+	flex: 1 1 auto;
+	background-color: antiquewhite;
+	padding-left: 1.2ex;
+	padding-right: 0.8ex;
+	padding-top: 1ex;
+	padding-bottom: 1ex;
+}
+
+.box .row.footer {
+	flex: 0 1 0;
+	direction: rtl;
+	background-color: whitesmoke;
+	height: 28px;
+	border-bottom-right-radius: 16px;
+}
+
+.addButton {
+	position: relative;
+	border: none;
+	background-color : #c44a41;
+	color: white;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 18px;
+	padding-right: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+	border-top-left-radius: 16px;
+	border-bottom-right-radius: 16px ;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24),0 2px 5px 0 rgba(0,0,0,0.19);
+}
+.addButton:hover{ 
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.24),0 7px 15px 0 rgba(0,0,0,0.19);
+}	
+.addButton:focus{
+	outline: none;	
+}
+.addButton.cnt {
+	color: black;
+	background-color: white;
+}
+.addButton:active {
+	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+	box-shadow: 0 0 0 0, 0 0 0 0 ;
+}
+.quantity{
+	font-family: 'Roboto Mono', monospace; 
+	color: #c44a41;
+}
+
+.title {
+	font-family: 'Caveat', cursive;
+	font-size: 22px;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #868686;
+}
+.foodBoxprice {
+	float: left;
+	padding-left: 12px;
+	font-family: 'Caveat', cursive;
+	font-size: 18px;
+	font-weight: 800;
+	color: maroon;
+}
+
+.description {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 18px;
+	text-shadow: 4px 4px 4px #aaa;
+	color: #4d0303;
+}
+
+/* 
+font-family: 'Caveat', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Roboto Mono', monospace; 
+*/

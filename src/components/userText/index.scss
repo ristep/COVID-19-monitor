@@ -1,0 +1,37 @@
+
+.userPanel {
+	position: fixed;
+	z-index: 999;
+	right: 0%;
+	top: 32px;
+	font-family: 'Caveat', cursive;
+	font-size: 24px;
+	/* font-weight: 800; */
+	text-shadow: black;
+	color: rgb(243, 239, 239);
+	background-color: rgba(83, 68, 30, 0.527);
+	border-top-left-radius: 16px;
+	border-bottom-right-radius: 16px ;
+	padding-right: 16px;
+	padding-left: 12px;
+	padding-bottom: 8px;
+	min-width: auto;
+	overflow: auto;
+  margin-right: 1px;
+}
+
+.userPanel:hover{
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.24),0 7px 15px 0 rgba(0,0,0,0.19);
+}
+.userImePrez {
+	position: relative;
+	text-align: center;
+}
+
+/* 
+font-family: 'Caveat', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Roboto Mono', monospace; 
+*/

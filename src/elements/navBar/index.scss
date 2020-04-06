@@ -1,0 +1,28 @@
+.navBar{
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	top: 0;
+	line-height:32px;
+	text-align: center;
+	font-size: 16px;
+	color: white;
+	background-color: rgba(165, 124, 124, 0.726);
+	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.66);
+};
+
+.navlink {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 0px 14px 0px 14px; 
+	text-decoration: none;
+	user-select: none;
+	float: left;
+}	
+.navlink:active{
+	background-color: #009688;
+}
+.navlink:hover{
+	background-color: #FF5722;
+}
