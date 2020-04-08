@@ -522,21 +522,21 @@ input[type=submit]:hover {
 .LangButton {
 	border: none;
 	position: absolute;
+	padding-left: 6px;
+	padding-right: 6px;
+	
 	right: 0px;
-	background-color: rgba(97, 160, 42, 0.78);
+	height: 32px;
+	// background-color: rgba(97, 160, 42, 0.78);
 	color: white;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	padding-left: 22px;
-	padding-right: 22px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
   cursor: pointer;
 	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
-	border-bottom-left-radius: 16px;
-	border-top-right-radius: 16px ;
+	// border-bottom-left-radius: 16px;
+	// border-top-right-radius: 16px ;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24),0 2px 5px 0 rgba(0,0,0,0.19); 
 	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.66);
 }

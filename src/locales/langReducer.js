@@ -2,11 +2,14 @@ import { useSelector } from "react-redux";
 import produce from "immer";
 import { SET_TRANSLATION, CLEAR_TRANSLATION, NEXT_LANGUAGE	} from 'redux/actionTypes';
 import { languages } from "./Trans";
+import mkd from "../img/iconfinder_Macedonia-Flag_32270.png"
+import ukd from "../img/iconfinder_United-Kingdom-flag_32363.png"
 
 const initialState = {
 	lang: "en",
 	index: 0, 
 	langList: ['en','mk'],
+	flags: [ ukd, mkd ],
 	dictionary:{
 		en:{
 			CountryChart:"Country Chart",
@@ -24,7 +27,6 @@ const initialState = {
 			"Last Report":"Последен репорт",
 			"Last Graphic":"Графика до",
 			"Home Page": "Почетна страна",
-			"Home page": "Почетна страна",
 			"Twitter list":"Твитерана",
 			"World Total": "Свет збирно",
 			"Countries Table":"Табела по држави",
@@ -47,6 +49,7 @@ export default (state = initialState, action) =>
 		
 			case SET_TRANSLATION: 
 				draft.language = action.payload.lang;
+				draft.index = draft.langList.indexOf(action.payload.lang);
 				localStorage.setItem('Language',draft.language);
 				break;
 
@@ -72,4 +75,5 @@ export default (state = initialState, action) =>
 export const useTransData = () => useSelector( (state) =>( state.langReducer.data ) );
 export const useLanguage = () => useSelector( (state) =>( state.langReducer.language ) );
 export const useDictionary = () => useSelector( state => state.langReducer.dictionary[state.langReducer.language]);
-export const useTranslate = (txt) => useSelector( state => state.langReducer.dictionary[state.langReducer.language][txt]);
+// export const useTranslate = (txt) => useSelector( state => state.langReducer.dictionary[state.langReducer.language][txt]);
+export const useFlag = () => useSelector( state => state.langReducer.flags[state.langReducer.index] ); 

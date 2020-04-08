@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import './main.scss';
 import AppNavBar from 'components/appNavbar';
 import { useDispatch } from "react-redux";
-import { navigateToUrl, fetchToken, setLanguage} from 'redux/actions';
+import { navigateToUrl, fetchToken, setLanguage, nextLanguage} from 'redux/actions';
 import { useIsLoggedIn, useTokenError } from 'redux/selectorHooks';
 import { NaviGator } from "routes";
 
@@ -11,8 +11,9 @@ function App() {
 	const lioggedIn = useIsLoggedIn();
 	const hasTokenError = useTokenError();
 
-	localStorage.setItem('Language','mk');
+	// localStorage.setItem('Language','mk');
 	dispatch(setLanguage({lang:'mk'}));
+	//dispatch(nextLanguage())
 	
 	useEffect( () => {
 		dispatch(navigateToUrl(window.location.hash));
