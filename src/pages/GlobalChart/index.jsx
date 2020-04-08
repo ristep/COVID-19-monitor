@@ -6,7 +6,7 @@ import { mdiChartBar, mdiChartLine } from "@mdi/js";
 import { useDispatch } from "react-redux";
 import { prepareDataAction, executeDataAction } from "redux/actions";
 import { Trans } from "locales/Trans";
-import { useDictionary, useTranslate } from "locales/langReducer";
+// import { useDictionary, useTranslate } from "locales/langReducer";
 
 var chartConfig = {
 		type: "line",
@@ -61,12 +61,11 @@ var chartConfig = {
 
 const ChartGlobal = () => {
 	const [ ctp, setCtp ] = useState('line') 
-	const { data, history } = useGlobalHistory();
+	const { history } = useGlobalHistory();
   const chartContainer = useRef(null);
   const [chartInstance, setChartInstance] = useState(null);
 	const {cases, deaths, total_recovered, new_cases, statistic_taken_at} = useWorldTotal();
 	const dispatch = useDispatch();
-	const trn = useDictionary();
 	
 	useEffect(() => {
     if (chartContainer && chartContainer.current) {
@@ -75,6 +74,7 @@ const ChartGlobal = () => {
       const newChartInstance = new Chartjs(chartContainer.current, chartConfig);
       setChartInstance(newChartInstance);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chartContainer,ctp]);
 	
  	useEffect( () =>{

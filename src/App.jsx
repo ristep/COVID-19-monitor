@@ -3,13 +3,13 @@ import './main.scss';
 import AppNavBar from 'components/appNavbar';
 import { useDispatch } from "react-redux";
 import { navigateToUrl, fetchToken, setLanguage, nextLanguage} from 'redux/actions';
-import { useIsLoggedIn, useTokenError } from 'redux/selectorHooks';
+// import { useIsLoggedIn, useTokenError } from 'redux/selectorHooks';
 import { NaviGator } from "routes";
 
 function App() { 
 	const dispatch = useDispatch();
-	const lioggedIn = useIsLoggedIn();
-	const hasTokenError = useTokenError();
+	// const lioggedIn = useIsLoggedIn();
+	// const hasTokenError = useTokenError();
 
 	// localStorage.setItem('Language','mk');
 	dispatch(setLanguage({lang:'mk'}));
@@ -19,14 +19,14 @@ function App() {
 		dispatch(navigateToUrl(window.location.hash));
 		window.onhashchange = () => dispatch(navigateToUrl(window.location.hash));
 		// voa dodeka ne se stokme UserManagmentot 
-		if(!lioggedIn)
-			dispatch(fetchToken({ userName: 'anonymous', password: 'anonymous' }));
-	}, [dispatch,lioggedIn] );
+		// if(!lioggedIn)
+		// 	dispatch(fetchToken({ userName: 'anonymous', password: 'anonymous' }));
+	}, [dispatch] );
 	
-	useEffect( () => {
-		console.log({tikenErr: hasTokenError});
-	},
-	[hasTokenError]);
+	// useEffect( () => {
+	// 	console.log({tikenErr: hasTokenError});
+	// },
+	// [hasTokenError]);
 
 	return (
     <div className="app">

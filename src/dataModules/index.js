@@ -1,8 +1,7 @@
 import axios from "axios";
-import { useDispatch } from "react-redux";
 
 const axParams = {
-	baseURL: "http://192.168.100.8/rapi/",
+	baseURL: "https://sman.cloud/covid19-api/",
 	headers: {
 		"Authorization": "dummy-key",
 		"Content-type": "application/json"

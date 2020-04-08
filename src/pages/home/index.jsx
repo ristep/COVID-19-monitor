@@ -28,8 +28,8 @@ const HomePage = () => {
 					<img src={Img} alt="" className="mzGovImg"></img>
 					{/* <Moment className="moment" format="LLLL">{feed.lastBuildDate}</Moment> */}
 				</div>
-				{ feed.item.map( (item) => (
-					<div className="feedBox" onClick={() => clickHandle(item.guid)}>
+				{ feed.item.map( (item,i) => (
+					<div className="feedBox" key={i} onClick={() => clickHandle(item.guid)}>
 						<p>{item.title}</p>
 						<Moment className="feedTitle" format="LLLL">{item.pubDate}</Moment>
 						<p>{item.description}</p>
@@ -46,12 +46,3 @@ const HomePage = () => {
 }
 
 export default HomePage;
-
-	// useEffect(() => {
-	// 	graph.setAccessToken('95f631716bca7b74edaab01e844ff3fb');
-	// 	graph
-	// 	.setOptions(options)
-	// 	.get("ristepan", function(err, res) {
-	// 		console.log(res); // { id: '4', name: 'Mark Zuckerberg'... }
-	// 	});
-	// }, [])
