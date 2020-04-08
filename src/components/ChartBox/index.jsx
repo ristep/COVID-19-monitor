@@ -67,6 +67,7 @@ const ChartBox = () => {
     if (chartContainer && chartContainer.current) {
 			if(chartInstance) chartInstance.destroy();
 			chartConfig.type = ctp;
+			
       const newChartInstance = new Chartjs(chartContainer.current, chartConfig);
       setChartInstance(newChartInstance);
     }
