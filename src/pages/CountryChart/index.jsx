@@ -85,7 +85,7 @@ const CountryChart = () =>{
 						onChange={onInputChange} 
 						onKeyDown={(evn) => keyHandle(evn)}
 						value={searchString} 
-						autocomplete="off"
+						autoComplete="off"
 					/>
 				</div>
 				{ srVisible &&	

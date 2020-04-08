@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { prepareDataAction, executeDataAction } from "redux/actions";
 import { useWorldTotal } from "redux/selectorHooks";
 import {group3} from "../../functions";
+import { Trans } from "locales/Trans";
 
 const WorldTotal = () =>{
 	const dispatch = useDispatch();
@@ -17,23 +18,23 @@ const WorldTotal = () =>{
 	return(
 		<div className="page">
 				<div className="sticker">
-					<div className="stickerTitle">Total Cases</div>
+					<div className="stickerTitle"><Trans>Total Cases</Trans></div>
 					<div className="stickerBody">{group3(cases)}</div>
 				</div>	 
 				<div className="sticker">
-					<div className="stickerTitle">Deaths</div> 
+					<div className="stickerTitle"><Trans>Deaths</Trans></div> 
 					<div className="stickerBody">{group3(deaths)}</div>
 				</div>
 				<div className="sticker">
-					<div className="stickerTitle">Recovered</div> 
+					<div className="stickerTitle"><Trans>Recovered</Trans></div> 
 					<div className="stickerBody"> {group3(total_recovered)}</div>
 				</div>
 				<div  className="sticker">
-					<div className="stickerTitle">New cases</div>
+					<div className="stickerTitle"><Trans>New cases</Trans></div>
 					<div className="stickerBody">{group3(new_cases)}</div>
 				</div>
 				<div  className="sticker">
-					<div className="stickerTitle">Active cases</div>
+					<div className="stickerTitle"><Trans>Active Cases</Trans></div>
 					<div className="stickerBody">{group3(activeCases)}</div>
 				</div>
 		</div>

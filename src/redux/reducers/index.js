@@ -6,8 +6,10 @@ import userToken from "./userToken";
 import jsonData from "./jsonData";
 import naviGator from "./naviGator";
 import twitterList from "./twitterList";
+import langReducer from "locales/langReducer";
 
 export default { 
+	langReducer,
 	naviGator,
 	uiState,
 	theme,

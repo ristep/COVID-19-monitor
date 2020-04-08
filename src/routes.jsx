@@ -24,14 +24,13 @@ export const routes = {
 export const routeTitle = (route) => (
 	{
 		home: "Home Page",
-		twitter:"Twiter list",
+		twitter:"Twitter list",
 		world_total: "World Total",
 		countries: "Countries Table",
 		country_chart: "Country Chart",
 		global_chart: "Global Chart",
 		about: "About",
 		errPage: "Error page not found! ",
-
 	}[route]
 );
 

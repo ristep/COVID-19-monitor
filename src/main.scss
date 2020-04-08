@@ -9,13 +9,14 @@ $hoversideNavColor: darken($sideNavColor, 60%);
 $tableLineColor: rgba(255, 255, 255, 0.616);
 $tableBacgroundColor: rgba(131, 182, 173, 0.4); 
 $incSearchHotColor: rgba(177, 241, 56, 0.76);
+$mediaWidth: 800px;
 
 .app {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and ( max-width: $mediaWidth ) {
   .app {
 		justify-content: left;
   }
@@ -76,6 +77,14 @@ table {
 }
 //End table
 
+//Table 
+.isLink{
+	color: white;
+	text-decoration: underline;
+	&:hover{
+		color: maroon;
+	}
+}
 //incSearch
 .incLink{
 	color: white;
@@ -126,8 +135,8 @@ table {
 	user-select: none;
 	float: left;
 	.navLabel{
-		padding: 12px;
-		font-family: 'Roboto Mono', monospace; 
+		padding-left: 12px;
+		// font-family: 'Roboto Mono', monospace; 
 		font-size: large;
 	};
 	&:hover{
@@ -160,29 +169,22 @@ table {
 }
 
 .navIcon{
-	/* width: 1.5rem; */
+	width: 2rem; 
 	height: 28px;
-	padding: 0px 14px 0px 14px; 
-	fill: whitesmoke;
-}
-
-.navIcon{
-	/* width: 1.5rem; */
-	height: 28px;
-	padding: 0px 14px 0px 14px; 
-	fill: whitesmoke;
+	fill: white;
 }
 
 svg{
-	width: 1.5rem;
+	width: 2rem;
 	height: 32px;
-	fill: whitesmoke;
+	fill: white;
 }	
 
 #sidenav {
   height: 100%;
   width: 260px;
-  position: fixed;
+	position: fixed;
+	font-weight: 800;
   z-index: 900;
   top: 0;
   left: 0;
@@ -469,7 +471,7 @@ input[type=submit]:hover {
 	border-bottom-left-radius: 16px;
 	border-top-right-radius: 16px;
 	box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.2);
- 	:hover{
+ 	&:hover{
 		background-color: white;
 		box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
  	}	
@@ -516,3 +518,67 @@ input[type=submit]:hover {
 		width: 100%;
 	}
 }
+
+.LangButton {
+	border: none;
+	position: absolute;
+	right: 0px;
+	background-color: rgba(97, 160, 42, 0.78);
+	color: white;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 22px;
+	padding-right: 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+	border-bottom-left-radius: 16px;
+	border-top-right-radius: 16px ;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24),0 2px 5px 0 rgba(0,0,0,0.19); 
+	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.66);
+}
+.LangButton:hover{ 
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.24),0 7px 15px 0 rgba(0,0,0,0.19);
+}	
+.LangButton:focus{
+	outline: none;	
+}
+.LangButton:active {
+	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+	box-shadow: 0 0 0 0, 0 0 0 0 ;
+}
+
+.chartBottom{
+	display: flex;
+}
+
+.chartLegend {
+	display: inline-flex;
+	margin: auto; 
+	position: relative;
+}
+
+.chartLg{
+	border: solid;
+	border-width: 2px;
+	padding:0 6px 0 6px;
+	margin: 4px 4px 0 4px;
+	border-radius: 10px;
+	font-size: small;
+}
+
+@media only screen and ( max-width: $mediaWidth ) {
+	.chartLg{
+		font-size: x-small;
+	}
+}	
+/* 
+font-family: 'Caveat', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Roboto Mono', monospace; 
+*/

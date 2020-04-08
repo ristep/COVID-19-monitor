@@ -5,8 +5,10 @@ import Icon from "@mdi/react";
 import { mdiChartBar, mdiChartLine } from "@mdi/js";
 import { useDispatch } from "react-redux";
 import { prepareDataAction, executeDataAction } from "redux/actions";
+import { Trans } from "locales/Trans";
+import { useDictionary, useTranslate } from "locales/langReducer";
 
-const chartConfig = {
+var chartConfig = {
 		type: "line",
 		data: {
 			datasets: [
@@ -40,6 +42,9 @@ const chartConfig = {
 		options: {
 			maintainAspectRatio: false,
 			responsive: true,
+			legend: {
+				display: false,
+			},
 			tooltips: {
 				mode: 'index',
 				axis: 'y'
@@ -61,7 +66,8 @@ const ChartGlobal = () => {
   const [chartInstance, setChartInstance] = useState(null);
 	const {cases, deaths, total_recovered, new_cases, statistic_taken_at} = useWorldTotal();
 	const dispatch = useDispatch();
-
+	const trn = useDictionary();
+	
 	useEffect(() => {
     if (chartContainer && chartContainer.current) {
 			if(chartInstance) chartInstance.destroy();
@@ -94,26 +100,34 @@ const ChartGlobal = () => {
 
 	const togleType = () => {
 		setCtp( ctp==='bar' ? 'line' : 'bar' );  
-		console.log(ctp);
- }
+  }
 
   return (
     <div className="chartBox">
 			{/* <NavLink onClick={togleType}>Chart type: {ctp}</NavLink> */}
 			<Icon className="chartIcon" onClick={togleType} path={ ctp==='line' ? mdiChartBar : mdiChartLine } title={"Change chart type"} /> 
+			<div className="chartLegend">
+					{chartConfig.data.datasets.map( x => 
+						<div className="chartLg" style={{borderColor: x.borderColor, backgroundColor: x.backgroundColor, color:x.borderColor }}>
+							<Trans>{x.label}</Trans>
+						</div> 
+					)}
+			</div>	
+
 			<div className="chartDiv">
   			<canvas ref={chartContainer} id="canvas" className="chartCanvas" ></canvas>
 			</div>			 
 
 			<div>
-			<h3>World chart</h3>
-			<div>Total Cases: {cases}</div>
-			<div>Deaths: {deaths}</div>
-			<div>New Cases: {new_cases}</div>
-			<div>Recovered: {total_recovered}</div>
-			<div>Last Report: {statistic_taken_at}</div>
-			<div>Last Graphic Date: {history.end}</div>
+				<h3><Trans>World chart</Trans></h3>
+				<div><Trans>Total Cases</Trans>: {cases}</div>
+				<div><Trans>Deaths</Trans>: {deaths}</div>
+				<div><Trans>New Cases</Trans>: {new_cases}</div>
+				<div><Trans>Recovered</Trans>: {total_recovered}</div>
+				<div><Trans>Last Report</Trans>: {statistic_taken_at}</div>
+				<div><Trans>Last Graphic</Trans>: {history.end}</div>
 			</div>
+
 	  </div>
   );
 };

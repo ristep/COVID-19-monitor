@@ -48,3 +48,8 @@ export const INDEX_DECREMENT = 'INDEX_DECREMENT';
 export const TL_ADD_PRIFILE = 'TL_ADD_PRIFILE';
 export const TL_REMOVE_PROFILE = 'TL_REMOVE_PROFILE';
 export const TL_RESET = 'TL_RESET';
+
+//trabslate actions 
+export const SET_TRANSLATION = "SET_TRANSLATION";
+export const CLEAR_TRANSLATION = "CLEAR_TRANSLATION";
+export const NEXT_LANGUAGE = "NEXT_LANGUAGE";

@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect } from 'react'
-import { useTable, usePagination } from 'react-table'
+import { useTable, usePagination, useFilters, useSortBy } from 'react-table'
 
 // import ReactJson from 'react-json-view'
 import { useWorldCountries } from 'redux/selectorHooks'
 import { useDispatch } from 'react-redux'
 import { prepareDataAction, executeDataAction } from 'redux/actions'
 import { group3 } from 'functions'
+import { Trans } from 'locales/Trans'
 
 function Table({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
@@ -33,9 +34,25 @@ function Table({ columns, data }) {
       data,
       initialState: { pageIndex: 0, pageSize: 20 },
     },
-    usePagination
+		usePagination
   )
 
+	// Define a default UI for filtering
+function CountryNameColumn({
+  column: { filterValue, preFilteredRows, setFilter },
+}) {
+  const count = preFilteredRows.length
+
+  return (
+    <input
+      value={filterValue || ''}
+      onChange={e => {
+        setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
+      }}
+      placeholder={`Search ${count} records...`}
+    />
+  )
+}
   // Render the UI for your table
   return (
     <>
@@ -44,7 +61,7 @@ function Table({ columns, data }) {
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                <th {...column.getHeaderProps()}><Trans>{column.render('Header')}</Trans></th>
               ))}
             </tr>
           ))}
@@ -142,11 +159,11 @@ function CountriesTable() {
           {
 						Header: 'Country name',
 						accessor: n => (
-							<div className='leftAlign' name={n.country_name} onClick={() => countryClick(n.country_name)}>{n.country_name}</div>
+							<div className='isLink' name={n.country_name} onClick={() => countryClick(n.country_name)}>{n.country_name}</div>
 						)
 					},
           {
-						Header: 'Total cases',
+						Header: 'Total Cases',
 						accessor: n => (
 							<div className='rightAlign'>{group3(n.cases)}</div>
 						)

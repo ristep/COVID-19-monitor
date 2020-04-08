@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from '@mdi/react'
+import { Trans } from 'locales/Trans';
 // import './index.scss'
 
 const NavLink = (props) => {
@@ -9,8 +10,8 @@ const NavLink = (props) => {
 
 	return(
 		<div className='navLink' onClick={onClickHand} {...props} >
-			<Icon path={props.path}/>
-			<label className="navLabel">{props.label}</label>
+			<Icon className="navIcon" path={props.path}/>
+			<label className="navLabel"><Trans>{props.label}</Trans></label>
 		</div>
 	);
 }

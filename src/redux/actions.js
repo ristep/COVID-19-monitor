@@ -15,6 +15,9 @@ import {
 	UPDATE_DATA_ROW,
 	INDEX_INCRMENT,
 	INDEX_DECREMENT,
+	SET_TRANSLATION,
+	CLEAR_TRANSLATION,
+	NEXT_LANGUAGE,
 } from "./actionTypes";
 import { getToken, postJsonRequest } from "dataModules";
 
@@ -120,6 +123,9 @@ export const submitJsonQuery = (args) => {
 		})
 	}
 }	
-
 // export apiCall = ()
 
+// language actions 
+export const setLanguage 	= (lang) => ({ type: SET_TRANSLATION, payload: lang });
+export const clearLanguage = () => ({ type: CLEAR_TRANSLATION });
+export const nextLanguage = () => ({ type: NEXT_LANGUAGE });
