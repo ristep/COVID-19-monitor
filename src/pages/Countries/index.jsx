@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react'
-import { useTable, usePagination, useFilters, useSortBy } from 'react-table'
+import { useTable, usePagination } from 'react-table'
 
 // import ReactJson from 'react-json-view'
 import { useWorldCountries } from 'redux/selectorHooks'
@@ -38,21 +38,21 @@ function Table({ columns, data }) {
   )
 
 	// Define a default UI for filtering
-function CountryNameColumn({
-  column: { filterValue, preFilteredRows, setFilter },
-}) {
-  const count = preFilteredRows.length
+// function CountryNameColumn({
+//   column: { filterValue, preFilteredRows, setFilter },
+// }) {
+//   const count = preFilteredRows.length
 
-  return (
-    <input
-      value={filterValue || ''}
-      onChange={e => {
-        setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
-      }}
-      placeholder={`Search ${count} records...`}
-    />
-  )
-}
+//   return (
+//     <input
+//       value={filterValue || ''}
+//       onChange={e => {
+//         setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
+//       }}
+//       placeholder={`Search ${count} records...`}
+//     />
+//   )
+// }
   // Render the UI for your table
   return (
     <>
