@@ -49,3 +49,4 @@ export const useGlobalHistory = () => useSelector( (state) => ({
 	}));
 
 export const useZdravstvoRSS = () => useSelector( state => state.jsonData.zdravstvoRSS.channel );
+export const useWhoNewsRSS = () => useSelector( state => state.jsonData.whoNewsRSS.channel );

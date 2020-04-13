@@ -36,6 +36,12 @@ const AppNavBar = () => {
 					onClick={() => navClickHandle('#/home')} 
 				/>
 				<NavLink 
+					title="WHO news" 
+					label="WHO news feed" 
+					path={mdiTwitter} 
+					onClick={() => navClickHandle('#/whonews')} 
+				/>
+				<NavLink 
 					title="Twitter" 
 					label="Twitter list" 
 					path={mdiTwitter} 

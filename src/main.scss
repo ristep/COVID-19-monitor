@@ -1,9 +1,11 @@
+@import "bourbon";
+
 $pageDefaultColor: rgb(11, 122, 11); 
 $boxDefColor: rgba(253, 243, 243, 0.61);
 $hoverDefColor: darken($boxDefColor, 60%);
 
 $navBarColor:rgba(56, 141, 56, 0.61);
-$boxShadow:  0px 1px 3px 0px rgba(0,0,0,0.66);
+$boxShadow:  .51px 1px 3px 0px rgba(0,0,0,0.66);
 $sideNavColor: rgba(142, 151, 12, 0.9);
 $hoversideNavColor: darken($sideNavColor, 60%);
 $tableLineColor: rgba(255, 255, 255, 0.616);
@@ -126,22 +128,34 @@ table {
 	top: -0.4rem;
 }
 
+svg{
+	width: 2rem;
+	height: 32px;
+	color: mediumaquamarine;
+}	
+
 //////////////////////////
 .navLink{
 	color: rgb(241, 245, 229);
 	text-align: center;
-	font-size: large;
 	padding: 0px 14px 0px 14px; 
 	user-select: none;
 	float: left;
+	font-family: $font-stack-hoefler-text;
+	font-size: large;
 	.navLabel{
-		padding-left: 12px;
-		// font-family: 'Roboto Mono', monospace; 
-		font-size: large;
-	};
+		padding-left: 22px;
+		position: relative;
+		top: -0.5rem;
+		};
 	&:hover{
 		background-color: $hoverDefColor;
-	} 
+	}
+	svg{
+		width: 2rem;
+		height: 32px;
+		color: mediumaquamarine;
+	}	
 }	
 
 .navBar{
@@ -156,34 +170,20 @@ table {
 	color: white;
 	background-color: $navBarColor;
 	box-shadow: $boxShadow;
+	.routeTitle{
+		position: fixed;
+		left: 60px;
+		font-family: $font-stack-hoefler-text;
+		font-weight: bold;
+	}
 }
 
-.routeTitle{
-	position: fixed;
-	left: 60px;
-}
-
-.navLabel{
-	position: relative;
-	top: -0.4rem;
-}
-
-.navIcon{
-	width: 2rem; 
-	height: 28px;
-	fill: white;
-}
-
-svg{
-	width: 2rem;
-	height: 32px;
-	fill: white;
-}	
 
 #sidenav {
   height: 100%;
   width: 260px;
 	position: fixed;
+	font-family: $font-stack-hoefler-text;
 	font-weight: 800;
   z-index: 900;
   top: 0;
@@ -192,6 +192,7 @@ svg{
   transition: 0.3s;
 	margin-top: 32px;
 	background-color: $sideNavColor;
+	box-shadow: $boxShadow;
 }
 
 #sidenav.sidenavHiden {
@@ -262,6 +263,7 @@ svg{
 }
 
 .sticker {
+  @include border-color(#a60b55 #76cd9c null #e8ae1a);
 	margin: 5px;
 	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
 	display: flex;
@@ -477,6 +479,23 @@ input[type=submit]:hover {
  	}	
 }
 
+.whoFeedBox{
+	overflow:scroll; 
+	height:400px;
+  background-color: whitesmoke;
+	margin: 5px;
+	padding: 12px;
+	width: 840px;
+	font-size: medium;
+	border-bottom-left-radius: 16px;
+	border-top-right-radius: 16px;
+	box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.2);
+ 	&:hover{
+		background-color: white;
+		box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+ 	}	
+}
+
 .moment{
 	font-size: medium;
 }
@@ -487,6 +506,14 @@ input[type=submit]:hover {
 	border-bottom-left-radius: 16px;
 	border-top-right-radius: 16px;
 }
+
+.whoImg{
+	width: 50%;
+	height: auto;
+	border-bottom-left-radius: 16px;
+	border-top-right-radius: 16px;
+}
+
 .mzGovTitle{
 	display: flex;
 	justify-content: center;
@@ -508,6 +535,10 @@ input[type=submit]:hover {
 
 @media only screen and (max-width: 600px) {
 	.mzGovImg{
+		width: 100%;
+		height: auto;
+	}
+	.whoImg{
 		width: 100%;
 		height: auto;
 	}

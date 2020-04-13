@@ -10,7 +10,7 @@ const NavLink = (props) => {
 
 	return(
 		<div className='navLink' onClick={onClickHand} {...props} >
-			<Icon className="navIcon" path={props.path}/>
+			<Icon  path={props.path}/>
 			<label className="navLabel"><Trans>{props.label}</Trans></label>
 		</div>
 	);

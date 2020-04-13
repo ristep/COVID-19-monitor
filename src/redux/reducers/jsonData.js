@@ -49,6 +49,22 @@ export const initialState = () => {
 			}
 		},
 
+		whoNewsRSS: {
+			dataAction: 'done',
+			dataSet: "whoNewsRSS",
+			editable: false,
+			OK: false,
+			error: false,
+			message: 'empty',
+			Sql: "",
+			count: 0,
+			data: [],
+			jsonQuery: {
+				phpFunction: "getWHOnewsRSS",
+				keyData: { }
+			}
+		},
+
 		worldCountries: {
 			dataAction: 'done',
 			dataSet: "worldCountries",

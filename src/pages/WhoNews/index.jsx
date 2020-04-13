@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { prepareDataAction, executeDataAction } from 'redux/actions';
-import { useZdravstvoRSS, useAuToken } from 'redux/selectorHooks';
-import ReactJson from 'react-json-view';
+import { useWhoNewsRSS } from 'redux/selectorHooks';
 import Moment from 'react-moment';
+import ReactHtmlParser from 'react-html-parser'; 
 import 'moment/locale/mk';
-import Img from "MZdravstvo.png";
+import Img from "whoLogo.png";
 
-const HomePage = () => {
+const WhoNews = () => {
 	const dispatch = useDispatch();
-	const feed = useZdravstvoRSS();
+	const feed = useWhoNewsRSS();
 	
 	useEffect(() => {
-		dispatch(prepareDataAction({ dataSet: "zdravstvoRSS", dataAction:"fetch"}))
-		dispatch(executeDataAction("zdravstvoRSS"));
+		dispatch(prepareDataAction({ dataSet: "whoNewsRSS", dataAction:"fetch"}))
+		dispatch(executeDataAction("whoNewsRSS"));
 	}, [dispatch]);
 
 	const clickHandle = (link) => {
@@ -25,15 +25,15 @@ const HomePage = () => {
 		feed !== undefined ?
 			<div className='mzPage' >
 				<div className="mzGovTitle">
-					<img src={Img} alt="" className="mzGovImg"></img>
+					<img src={Img} alt="" className="whoImg"></img>
 					{/* <Moment className="moment" format="LLLL">{feed.lastBuildDate}</Moment> */}
 				</div>
 				{ feed.item.map( (item,i) => (
-					<div className="feedBox" key={i} onClick={() => clickHandle(item.guid)}>
+					<div className="whoFeedBox" key={i} onClick={() => clickHandle(item.link)}>
 						<p>{item.title}</p>
 						<Moment className="feedTitle" format="LLLL">{item.pubDate}</Moment>
-						{/* <p>{item.description}</p> */}
-						<div dangerouslySetInnerHTML={{ __html: item.description }} />
+						<p>{ ReactHtmlParser (item.description) }</p>
+						{/* // <div dangerouslySetInnerHTML={{ __html: item.description }} /> */}
 					</div>))}
 				{/* <ReactJson src={feed.item} /> */}
 			</div>
@@ -46,4 +46,4 @@ const HomePage = () => {
 	);
 }
 
-export default HomePage;
+export default WhoNews;

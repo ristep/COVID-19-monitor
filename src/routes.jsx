@@ -10,9 +10,11 @@ import GlobalChart from "pages/GlobalChart";
 import AboutPage from "pages/AboutPage";
 import TwitterList from "pages/twiter";
 import TestChart from "pages/victoryChart";
+import WhoNews from "pages/WhoNews";
 
 export const routes = {
 	home: <HomePage />,
+	whonews: <WhoNews />,
 	twitter:<TwitterList />,
 	world_total: <WorldTotal />,
 	countries: <Countries />,
