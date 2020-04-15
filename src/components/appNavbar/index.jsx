@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSidenav } from 'redux/actions';
 import { getSidenavState, getPage } from 'redux/selectors';
 import Icon from '@mdi/react';
-import { mdiHome, mdiInformationOutline, mdiEarth, mdiTable, mdiChartAreaspline, mdiChartLine, mdiTwitter } from '@mdi/js';
+import { mdiHome, mdiInformationOutline, mdiEarth, mdiTable, mdiChartAreaspline, mdiChartLine, mdiTwitter, mdiPharmacy } from '@mdi/js';
+import whoIco from "whoIco.png";
 import { mdiVirusOutlined } from 'mdiIcons';
 import NavLink from 'elements/navLink';
 import LangButton from 'components/LangButton';
 import { Trans } from 'locales/Trans';
 
 const AppNavBar = () => {
-	const { page, title } = useSelector(getPage);
+	const { title } = useSelector(getPage);
 	const dispatch = useDispatch();
 	const sideState = useSelector(getSidenavState);
 	const sideNavClass = sideState?'sidenavVisible':'sidenavHiden';
@@ -30,22 +31,10 @@ const AppNavBar = () => {
 			</div>
 			<div id="sidenav" className={sideNavClass} onMouseLeave={() =>{ if(sideState) dispatch(toggleSidenav()) }}>
 				<NavLink 
-					title="Home page" 
-					label="Home page" 
+					title="Home" 
+					label="Home" 
 					path={mdiHome} 
 					onClick={() => navClickHandle('#/home')} 
-				/>
-				<NavLink 
-					title="WHO news" 
-					label="WHO news feed" 
-					path={mdiTwitter} 
-					onClick={() => navClickHandle('#/whonews')} 
-				/>
-				<NavLink 
-					title="Twitter" 
-					label="Twitter list" 
-					path={mdiTwitter} 
-					onClick={() => navClickHandle('#/twitter')} 
 				/>
 				<NavLink 
 					title="World Total" 
@@ -71,6 +60,26 @@ const AppNavBar = () => {
 					path={mdiChartAreaspline} 
 					onClick={() => navClickHandle('#/global_chart')}
 				/>
+				<hr />
+				<NavLink 
+					title="MZ news" 
+					label="MZ news feed" 
+					path={mdiPharmacy} 
+					onClick={() => navClickHandle('#/mznews')} 
+				/>
+				<NavLink 
+					title="WHO news" 
+					label="WHO news feed" 
+					icon={whoIco} 
+					onClick={() => navClickHandle('#/whonews')} 
+				/>
+				<NavLink 
+					title="Twitter" 
+					label="Twitter list" 
+					path={mdiTwitter} 
+					onClick={() => navClickHandle('#/twitter')} 
+				/>
+				<hr />
 				<NavLink 
 					title="Information" 
 					label="About" 

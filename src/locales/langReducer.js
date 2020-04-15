@@ -26,7 +26,7 @@ const initialState = {
 			"Recovered": "Излекувани",
 			"Last Report":"Последен репорт",
 			"Last Graphic":"Графика до",
-			"Home Page": "Почетна страна",
+			"Home": "Почетна страна",
 			"Twitter list":"Твитерана",
 			"World Total": "Свет збирно",
 			"Countries Table":"Табела по држави",
@@ -37,8 +37,11 @@ const initialState = {
 			"Country name":"Држава",
 			"Deads": "Починати",
 			"New Deaths": "Ново поч.",
+			"MZ news feed": "МЗ новости",
+			"WHO news feed": "СЗО новости",
 			"Critical cases":"Критични",
-			"About":"Инфо",
+			"COVID-19 Twitter colection":"COVID-19 твитерана",
+			"About":"Инфо"
 		}
 	}
 }

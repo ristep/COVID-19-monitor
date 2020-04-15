@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { getPage } from "redux/selectors";
+
 import HomePage from "pages/home";
 import PageNotFound from "pages/notFound";
-import { getPage } from "redux/selectors";
 import WorldTotal from "pages/worldTotal";
 import Countries from "pages/Countries";
 import CountryChart from "pages/CountryChart";
@@ -11,10 +12,12 @@ import AboutPage from "pages/AboutPage";
 import TwitterList from "pages/twiter";
 import TestChart from "pages/victoryChart";
 import WhoNews from "pages/WhoNews";
+import MzNews from "pages/MzNews";
 
 export const routes = {
 	home: <HomePage />,
 	whonews: <WhoNews />,
+	mznews: <MzNews />,
 	twitter:<TwitterList />,
 	world_total: <WorldTotal />,
 	countries: <Countries />,
@@ -27,7 +30,7 @@ export const routes = {
 
 export const routeTitle = (route) => (
 	{
-		home: "Home Page",
+		home: "Home",
 		twitter:"Twitter list",
 		world_total: "World Total",
 		countries: "Countries Table",

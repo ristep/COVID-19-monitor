@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { prepareDataAction, executeDataAction } from 'redux/actions';
-import { useZdravstvoRSS, useAuToken } from 'redux/selectorHooks';
-import ReactJson from 'react-json-view';
-import Moment from 'react-moment';
+import { useZdravstvoRSS, useWorldTotal } from 'redux/selectorHooks';
 import 'moment/locale/mk';
-import Img from "MZdravstvo.png";
+import ChartGlobal from 'pages/GlobalChart';
+import { Trans } from 'locales/Trans';
+import { group3 } from 'functions';
 
 const HomePage = () => {
 	const dispatch = useDispatch();
+	const {cases, deaths, total_recovered, new_cases} = useWorldTotal();
+	const activeCases = cases - deaths - total_recovered;
 	const feed = useZdravstvoRSS();
 	
 	useEffect(() => {
@@ -22,27 +24,30 @@ const HomePage = () => {
 	}
 
 	return(
-		feed !== undefined ?
-			<div className='mzPage' >
-				<div className="mzGovTitle">
-					<img src={Img} alt="" className="mzGovImg"></img>
-					{/* <Moment className="moment" format="LLLL">{feed.lastBuildDate}</Moment> */}
+		<div className="homePage">
+				<div className="sticker">
+					<div className="stickerTitle"><Trans>Total Cases</Trans></div>
+					<div className="stickerBody">{group3(cases)}</div>
+				</div>	 
+				<div className="sticker">
+					<div className="stickerTitle"><Trans>Deaths</Trans></div> 
+					<div className="stickerBody">{group3(deaths)}</div>
 				</div>
-				{ feed.item.map( (item,i) => (
-					<div className="feedBox" key={i} onClick={() => clickHandle(item.guid)}>
-						<p>{item.title}</p>
-						<Moment className="feedTitle" format="LLLL">{item.pubDate}</Moment>
-						{/* <p>{item.description}</p> */}
-						<div dangerouslySetInnerHTML={{ __html: item.description }} />
-					</div>))}
-				{/* <ReactJson src={feed.item} /> */}
-			</div>
-		:
-			<div className='page' >
-				<div>
-					<h2> Loading data! </h2>
+				<div className="sticker">
+					<div className="stickerTitle"><Trans>Recovered</Trans></div> 
+					<div className="stickerBody"> {group3(total_recovered)}</div>
 				</div>
-			</div>
+				<div  className="sticker">
+					<div className="stickerTitle"><Trans>New cases</Trans></div>
+					<div className="stickerBody">{group3(new_cases)}</div>
+				</div>
+				<div  className="sticker">
+					<div className="stickerTitle"><Trans>Active Cases</Trans></div>
+					<div className="stickerBody">{group3(activeCases)}</div>
+				</div>
+
+			<ChartGlobal />
+		</div>	
 	);
 }
 

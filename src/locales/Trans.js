@@ -22,7 +22,6 @@ export const languages =
 			"New Cases": "Нови",
 			"Recovered": "Излекувани",
 			"Last Report Date":"Последен репорт",
-			"Home Page": "Почетна страна",
 			"Home page": "Почетна страна",
 			"Twitter list":"Твитерана",
 			"World Total": "Свет збирно",

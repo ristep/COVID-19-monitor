@@ -1,6 +1,7 @@
 import React from 'react';
 import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 import { useTwitterList } from 'redux/reducers/twitterList';
+import { Trans } from 'locales/Trans';
 
 
 const TwitterList = () => {
@@ -10,7 +11,7 @@ const TwitterList = () => {
 		
 		<div className='page' >
 			<div style={{width:'100%'}}>
-				<h2>COVID-19 Twitter colection</h2>
+				<h2><Trans>COVID-19 Twitter colection</Trans></h2>
 			</div>
 
 			{ tlList.map( tl => 

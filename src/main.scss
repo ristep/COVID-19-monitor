@@ -1,7 +1,7 @@
 @import "bourbon";
 
 $pageDefaultColor: rgb(11, 122, 11); 
-$boxDefColor: rgba(253, 243, 243, 0.61);
+$boxDefColor: rgba(255, 255, 255, 0.61);
 $hoverDefColor: darken($boxDefColor, 60%);
 
 $navBarColor:rgba(56, 141, 56, 0.61);
@@ -131,7 +131,7 @@ table {
 svg{
 	width: 2rem;
 	height: 32px;
-	color: mediumaquamarine;
+	color: rgb(102, 205, 170);
 }	
 
 //////////////////////////
@@ -262,10 +262,24 @@ svg{
 	}
 }
 
+// total Stickers
+.pageTotal{
+	max-width: 1000px;
+	display: flex;
+	flex: content;
+	align-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0px;
+	padding: 8px;
+	background-color: $boxDefColor;
+	box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.484);
+	border-radius: 2px;
+	color: $pageDefaultColor;	
+}
 .sticker {
   @include border-color(#a60b55 #76cd9c null #e8ae1a);
-	margin: 5px;
-	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+	margin: 3px;
 	display: flex;
 	flex-flow: column;
 	height: auto;
@@ -273,7 +287,7 @@ svg{
 	text-align: center;
 	background-color: $boxDefColor;
 	box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.2);
-	min-width: 180px;
+	min-width: 140px;
 }
 .stickerTitle{
   height: 36px;
@@ -286,6 +300,13 @@ svg{
 .stickerBody{
 	font-size: xx-large;
 	font-weight: 800;
+	padding: 5px;
+}
+@media only screen and (max-width: 600px) {
+	.pageTotal{
+		flex-flow: column;
+		width: 50%;		
+	}
 }
 
 .boxTitle{
@@ -450,12 +471,15 @@ input[type=submit]:hover {
 
 // rss Feed styling 
 .mzPage {
+//flex
+	display: flex ;
+	flex-direction: row ;
+	flex-wrap: wrap ;
+	justify-content: space-between ;
+	align-items: stretch;
+	align-content: flex-start ;
+	
 	max-width: 870px;
-	display: flex;
-	flex: content;
-	align-content: center;
-	flex-direction: row;
-	flex-wrap: wrap;
 	margin: 0px;
 	padding: 8px;
 	background-color: $boxDefColor;
@@ -468,7 +492,7 @@ input[type=submit]:hover {
 	margin: 5px;
 	padding: 12px;
 	width: 400px;
-	
+	height: auto;
 	font-size: medium;
 	border-bottom-left-radius: 16px;
 	border-top-right-radius: 16px;
@@ -485,7 +509,7 @@ input[type=submit]:hover {
   background-color: whitesmoke;
 	margin: 5px;
 	padding: 12px;
-	width: 840px;
+	// width: 840px;
 	font-size: medium;
 	border-bottom-left-radius: 16px;
 	border-top-right-radius: 16px;
@@ -534,6 +558,10 @@ input[type=submit]:hover {
 }
 
 @media only screen and (max-width: 600px) {
+	.whoFeedBox{
+		width:auto;
+		max-width: 400px;
+	}
 	.mzGovImg{
 		width: 100%;
 		height: auto;

@@ -1,6 +1,8 @@
 import React from 'react';
 import Icon from '@mdi/react'
 import { Trans } from 'locales/Trans';
+import whoIco from "whoRezeda.png";
+// import mkd from "../img/iconfinder_Macedonia-Flag_32270.png"
 // import './index.scss'
 
 const NavLink = (props) => {
@@ -10,7 +12,11 @@ const NavLink = (props) => {
 
 	return(
 		<div className='navLink' onClick={onClickHand} {...props} >
-			<Icon  path={props.path}/>
+			{ props.path ? 
+				<Icon  path={props.path}/>
+			:
+				<img src={whoIco} alt={"who"} width="32" height="32" color="white" />			
+			}
 			<label className="navLabel"><Trans>{props.label}</Trans></label>
 		</div>
 	);
