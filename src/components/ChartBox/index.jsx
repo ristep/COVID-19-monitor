@@ -78,7 +78,7 @@ const ChartBox = () => {
       const newChartInstance = new Chartjs(chartContainer.current, chartConfig);
       setChartInstance(newChartInstance);
     }
-  }, [chartContainer,ctp,trn,chartConfig]);
+  }, [chartContainer, ctp, trn, chartInstance]);
 	
  	useEffect( () =>{
 		if(chartInstance){

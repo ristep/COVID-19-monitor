@@ -2,13 +2,11 @@ import React, { useEffect } from 'react';
 // import ReactDOM from 'react-dom';
 import { VictoryLine, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from 'victory';
 import { useGlobalHistory } from 'redux/selectorHooks';
-import ReactJson from 'react-json-view';
 import { useDispatch } from 'react-redux';
 import { prepareDataAction, executeDataAction } from 'redux/actions';
-import Moment from 'react-moment';
 
 const TestChart = () => {
-	const { data, history } = useGlobalHistory();
+	const { history } = useGlobalHistory();
 	const dispatch = useDispatch();
 
 	useEffect(() => {

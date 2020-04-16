@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { prepareDataAction, executeDataAction } from 'redux/actions';
-import { useZdravstvoRSS, useAuToken } from 'redux/selectorHooks';
-import ReactJson from 'react-json-view';
+import { useZdravstvoRSS } from 'redux/selectorHooks';
 import Moment from 'react-moment';
 import 'moment/locale/mk';
 import Img from "MZdravstvo.png";

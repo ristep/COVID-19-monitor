@@ -195,7 +195,7 @@ function CountriesTable() {
 
 	useEffect(() => {
 		reLoad();
-	}, [dispatch]);
+	}, [dispatch, reLoad]);
 
   return (
     <div className='page' style={ { maxWidth: "640px", minWidth: "500px" } }>

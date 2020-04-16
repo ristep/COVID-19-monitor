@@ -1,5 +1,5 @@
 import React from "react";
-import { useLanguage, useDictionary } from "./langReducer";
+import { useDictionary } from "./langReducer";
 
 // Lang List
 export const languages =
