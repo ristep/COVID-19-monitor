@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import './main.scss';
+import 'styles/app.scss';
 import AppNavBar from 'components/appNavbar';
 import { useDispatch } from "react-redux";
 import { navigateToUrl, setLanguage } from 'redux/actions';
@@ -12,7 +12,7 @@ function App() {
 	// const hasTokenError = useTokenError();
 
 	// localStorage.setItem('Language','mk');
-	dispatch(setLanguage({lang:'mk'}));
+	dispatch(setLanguage({lang:'en'}));
 	//dispatch(nextLanguage())
 	
 	useEffect( () => {

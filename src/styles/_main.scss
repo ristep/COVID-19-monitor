@@ -1,0 +1,281 @@
+
+.app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@media only screen and ( max-width: $mediaWidth ) {
+  .app {
+		justify-content: left;
+  }
+}
+body {
+	background-image: url("coronavirus.jpg");
+	background-size: auto;
+	background-blend-mode: lighten;
+	background-color: rgba(221, 231, 178, 0.788);
+	margin-top: 48px;
+}
+
+svg{
+	width: 2rem;
+	height: 32px;
+	color: rgb(102, 205, 170);
+}	
+
+.page {
+	max-width: 1000px;
+	display: flex;
+	flex: content;
+	align-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0px;
+	padding: 8px;
+	background-color: $boxDefColor;
+	box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.484);
+	border-radius: 2px;
+	color: $pageDefaultColor;
+}
+
+.markBox{
+	max-width: 1000px;
+	width: 100%;
+	padding: 8px;
+	background-color: whitesmoke;
+	box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.484);
+	border-radius: 2px;
+	color: $pageDefaultColor;
+}
+
+.box {
+	flex-flow: column;
+	height: auto;
+	border: none;
+	background-color: $boxDefColor;
+	box-shadow: $boxShadow;
+}
+
+.boxTitle{
+	font-family: 'Caveat', cursive;
+	font-size: xx-large;
+	font-weight: 800;
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 2px #3F1B11;
+}
+
+.passChangeIcon {
+	float: right;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin: 4px;
+	min-width: 40px;
+}
+.passChangeIcon:hover{
+	background-color: $hoverDefColor;
+}
+
+.inputLabel{
+	padding: 0;
+	width: 100%;
+	color: white;
+	font-family: 'Indie Flower', cursive;
+	/* font-family: 'Caveat', cursive;  */
+	font-weight: 800;
+	font-size: large;
+}
+
+.inputLabel > input:focus{
+	color: #961f0a;
+	background-color:moccasin ;
+	box-shadow: 0px 13px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+input[type=text] {
+	width: 100%;
+	max-height: 34px;
+  padding: 12px 20px;
+  display: inline-block;
+  border: none;
+  box-sizing: border-box;
+	box-shadow: 0px 13px 10px -7px rgba(3, 68, 14, 0.2);
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-weight: 400;
+	font-size: larger;
+	color: rgba(19, 53, 8, 0.74);
+}
+
+input::placeholder {
+	color: rgba(43, 43, 10, 0.25);
+}
+
+.inputLabel{
+	padding: 0;
+	margin-bottom: 8px;
+	margin-left: 8px;
+	margin-right: 8px;
+	border-top-right-radius: 16px;
+	border-bottom-left-radius: 16px;
+	color: white;
+	font-family: 'Indie Flower', cursive;
+	/* font-family: 'Caveat', cursive;  */
+	font-weight: 800;
+	font-size: large;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+	border-bottom-right-radius: 16px;
+	border-top-left-radius: 16px;
+	box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.2);
+}
+input:focus{
+	outline: none;	
+}
+
+input[type=submit]:hover {
+  background-color: $hoverDefColor;
+}
+
+.inputBox {
+  background-color: #c29679a4;
+	margin: 22px;
+	max-width: 400px;
+	border-bottom-left-radius: 16px;
+	border-top-right-radius: 16px;
+	box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.2);
+	// :hover{
+	// 	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.24),0 7px 15px 0 rgba(0,0,0,0.19);
+	// }	
+}
+
+.inputBox.loginError{
+	background-color: #d13014ab;
+}
+
+.touched {
+	background-color: #f0e26371;
+	color: #f3f1e7;
+}
+
+.bottomLine {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+  width: 100%;
+	height: 2em;
+	padding-top: 8px;
+	border-bottom-right-radius: 16px;
+	border-top-left-radius: 16px;
+	box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.2);
+}
+
+.subButton {
+	border: none;
+	color: white;
+	width: 50%;
+	text-align: center;
+	text-decoration: none;
+  display: inline-block;
+	font-size: 18px;
+	padding-top: 5px;	
+  cursor: pointer;
+	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24),0 2px 5px 0 rgba(0,0,0,0.19);
+	margin-left: 2px;
+}
+.subButton:hover{ 
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.24),0 7px 15px 0 rgba(0,0,0,0.19);
+}	
+.subButton:focus{
+	outline: none;	
+}
+.subButton:active {
+	box-shadow: 0 0 0 0, 0 0 0 0 ;
+}
+.cancel {
+	background-color : rgb(198, 201, 52);
+} 
+.submit {
+	background-color: orange;
+}
+
+.chartIcon{
+	background-color: rgba(160, 168, 141, 0.089);
+	padding: 0px 6px 0px 6px; 
+	user-select: none;
+	float: left;
+	&:hover{
+		background-color: $hoverDefColor;
+	} 
+}	
+
+.LangButton {
+	border: none;
+	position: absolute;
+	padding-left: 6px;
+	padding-right: 6px;
+	
+	right: 0px;
+	height: 32px;
+	// background-color: rgba(97, 160, 42, 0.78);
+	color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+	// border-bottom-left-radius: 16px;
+	// border-top-right-radius: 16px ;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24),0 2px 5px 0 rgba(0,0,0,0.19); 
+	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.66);
+}
+.LangButton:hover{ 
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.24),0 7px 15px 0 rgba(0,0,0,0.19);
+}	
+.LangButton:focus{
+	outline: none;	
+}
+.LangButton:active {
+	transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+	box-shadow: 0 0 0 0, 0 0 0 0 ;
+}
+
+.chartBottom{
+	display: flex;
+}
+
+.chartLegend {
+	display: inline-flex;
+	margin: auto; 
+	position: relative;
+}
+
+.chartLg{
+	border: solid;
+	border-width: 2px;
+	padding:0 6px 0 6px;
+	margin: 4px 4px 0 4px;
+	border-radius: 10px;
+	font-size: small;
+}
+
+@media only screen and ( max-width: $mediaWidth ) {
+	.chartLg{
+		font-size: x-small;
+	}
+}	
+/* 
+font-family: 'Caveat', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Roboto Mono', monospace; 
+*/

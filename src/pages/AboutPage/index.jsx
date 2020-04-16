@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
+import axios from "axios";
+
+const axParam = {
+	baseURL: "https://raw.githubusercontent.com/ristep/COVID-19-monitor/master/README.md",
+	headers: {
+		"Content-type": "application/text"
+	}
+};
+
+const axi = axios.create(axParam);
 
 const AboutPage = () =>{
+	const [readme, setReadme] = useState('');
+
+	useEffect(() => {
+		axi.get()
+    .then((response) => { setReadme(response.data)})
+    .catch((error) => {
+        console.warn(error);
+    })
+	},[]);
+
 	return(
-		<div className="page">
-			<h1>AboutPage</h1>
-			<div className="chartBox">
-			<h2> COVID-19 Monitor App</h2>
-			<div>Lniks:</div>
-			<a href="https://koronavirus.gov.mk/">koronavirus.gov.mk</a>
-			<a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">www.who.int/emergencies/diseases/novel-coronavirus-2019</a>
+		<div className="markBox">
+			<h2>COVID-19 Monitor App</h2>
+			<div>
+				<ReactMarkdown source={readme} />
+			</div> 
 		</div>
-	</div>
 	)
 }
 

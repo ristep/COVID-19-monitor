@@ -1,0 +1,84 @@
+//////////////////////////
+.navLink{
+	color: rgb(241, 245, 229);
+	text-align: center;
+	padding: 0px 14px 0px 14px; 
+	user-select: none;
+	float: left;
+	font-family: $font-stack-hoefler-text;
+	font-size: large;
+	.navLabel{
+		padding-left: 22px;
+		position: relative;
+		top: -0.5rem;
+		};
+	&:hover{
+		background-color: $hoverDefColor;
+	}
+	svg{
+		width: 2rem;
+		height: 32px;
+		color: mediumaquamarine;
+	}	
+}	
+
+.navBar{
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	top: 0;
+	left: 0;
+	line-height:32px;
+	text-align: center;
+	font-size: 18px;
+	color: white;
+	background-color: $navBarColor;
+	box-shadow: $boxShadow;
+	.routeTitle{
+		position: fixed;
+		left: 60px;
+		font-family: $font-stack-hoefler-text;
+		font-weight: bold;
+	}
+}
+
+
+#sidenav {
+  height: 100%;
+  width: 260px;
+	position: fixed;
+	font-family: $font-stack-hoefler-text;
+	font-weight: 800;
+  z-index: 900;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.3s;
+	margin-top: 32px;
+	background-color: $sideNavColor;
+	box-shadow: $boxShadow;
+}
+
+#sidenav.sidenavHiden {
+	left: -260px;
+}
+
+#sidenav div {
+	min-width: 100%;
+	text-align: left;
+  padding: 8px 8px 8px 32px;
+  display: block;
+  transition: 0.3s;
+}
+
+#sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  #sidenav {padding-top: 15px;}
+  #sidenav a {font-size: 18px;}
+}

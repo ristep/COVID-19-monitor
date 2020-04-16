@@ -1,0 +1,67 @@
+// total Stickers
+.homePage{
+	max-width: 1000px;
+	display: flex;
+	flex: content;
+	justify-content: space-evenly;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0px;
+	padding: 8px;
+	background-color: $boxDefColor;
+	box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.484);
+	border-radius: 2px;
+	color: $pageDefaultColor;	
+}
+.sticker {
+  @include border-color(#a60b55 #76cd9c null #e8ae1a);
+	margin: 3px;
+	margin-bottom: 12px;
+	display: flex;
+	flex-flow: column;
+	height: auto;
+	border: none;
+	text-align: center;
+	background-color: $boxDefColor;
+	box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.2);
+	min-width: 140px;
+}
+.stickerTitle{
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+	color: white;
+	font-weight: 800;
+	background-color: rgba(21, 61, 17, 0.788);
+}
+.stickerBody{
+	font-size: xx-large;
+	font-weight: 800;
+	padding: 5px;
+}
+.chartDivHome{
+ background-color: rgba(255, 255, 255, 0.5);
+ width: 100%;
+}
+
+@media only screen and (max-width: $mediaWidth) {
+	.homePage{
+		flex-flow: column;
+		width: 100%;		
+	}
+}
+
+.chartCanvasHome{
+	min-height: 480px;
+	min-width: 100%;
+}
+
+.chartIconHome{
+	// background-color: rgba(160, 168, 141, 0.089);
+  position: sticky;
+	top: 0px;
+	padding: 6px; 
+	&:hover{
+		background-color: $hoverDefColor;
+	} 
+}	

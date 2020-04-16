@@ -97,7 +97,7 @@ const ChartBox = () => {
   }
 
   return (
-    <div className="chartBox">
+    <div className="page">
 			<Icon className="chartIcon" onClick={togleType} path={ ctp==='line' ? mdiChartBar : mdiChartLine } title={"Change chart type"} /> 
 			<div className="chartLegend">
 					{chartConfig.data.datasets.map( x => 
