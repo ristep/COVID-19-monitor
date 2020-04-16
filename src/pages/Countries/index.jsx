@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect } from 'react'
-import { useTable, usePagination } from 'react-table'
-// import ReactJson from 'react-json-view'
-import { useWorldCountries } from 'redux/selectorHooks'
-import { useDispatch } from 'react-redux'
-import { prepareDataAction, executeDataAction } from 'redux/actions'
-import { group3 } from 'functions'
-import { Trans } from 'locales/Trans'
+import React, { useCallback, useEffect } from 'react';
+import { useTable, usePagination } from 'react-table';
+// import ReactJson from 'react-json-view';
+import { useWorldCountries } from 'redux/selectorHooks';
+import { useDispatch } from 'react-redux';
+import { prepareDataAction, executeDataAction } from 'redux/actions';
+import { group3 } from 'functions';
+import { Trans } from 'locales/Trans';
 
 function Table({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
@@ -33,7 +33,7 @@ function Table({ columns, data }) {
       initialState: { pageIndex: 0, pageSize: 20 },
     },
 		usePagination
-  )
+  );
 
   // Render the UI for your table
   return (

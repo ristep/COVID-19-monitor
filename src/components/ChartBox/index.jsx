@@ -64,7 +64,7 @@ const chartConfig = {
 
 const ChartBox = () => {
 	// const tran = useTranslation();
-	const [ ctp, setCtp ] = useState('line') 
+	const [ ctp, setCtp ] = useState('line'); 
 	const { data, history } = useCountryData();
   const chartContainer = useRef(null);
   const [chartInstance, setChartInstance] = useState(null);
@@ -94,7 +94,7 @@ const ChartBox = () => {
 	const togleType = () => {
 		setCtp( ctp==='bar' ? 'line' : 'bar' );  
 		console.log(ctp);
-  }
+  };
 
   return (
     <div className="page">

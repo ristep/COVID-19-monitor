@@ -10,12 +10,12 @@ const TestChart = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(prepareDataAction({ dataSet: "worldTotal", dataAction:"fetch"}))
+		dispatch(prepareDataAction({ dataSet: "worldTotal", dataAction:"fetch"}));
 		dispatch(executeDataAction("worldTotal"));
 	}, [dispatch]);
 
 	useEffect(() => {
-		dispatch(prepareDataAction({ dataSet: "globalHistory", dataAction:"fetch"}))
+		dispatch(prepareDataAction({ dataSet: "globalHistory", dataAction:"fetch"}));
 		dispatch(executeDataAction("globalHistory"));
 	}, [dispatch]);
 
