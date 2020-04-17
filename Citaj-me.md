@@ -3,18 +3,16 @@
 
 Програмчето е отворен ссофтвер со [MIT лиценца](https://github.com/ristep/COVID-19-monitor/blob/master/LICENSE).
 
-Комплетен изворен код може да се најде [тука](https://github.com/ristep/COVID-19-monitor)
+Комплетен изворен код може да се најде [тука](https://github.com/ristep/COVID-19-monitor).
 
 Овој проект е креиран со [Create React App](https://github.com/facebook/create-react-app).
 
 ## Употребени се:
 
-[ReactJS](https://github.com/facebook/react/)
+- [react-redux](https://github.com/reduxjs/react-redux)
 
-[react-redux](https://github.com/reduxjs/react-redux)
+- [Material Design Icons](https://materialdesignicons.com/)
 
-[Material Design Icons](https://materialdesignicons.com/)
+- [Google fonts](https://fonts.google.com/)
 
-[Google fonts](https://fonts.google.com/)
-
-... и други библиотеки детално во ***package.json***
+... и други библиотеки и дрнгалашки, детално во ***package.json***

@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import axios from "axios";
 
 const axParam = {
-	baseURL: "https://raw.githubusercontent.com/ristep/COVID-19-monitor/master/Citaj.me",
+	baseURL: "https://raw.githubusercontent.com/ristep/COVID-19-monitor/master/Citaj-me.md",
 	headers: {
 		"Content-type": "application/text"
 	}
@@ -24,7 +24,7 @@ const AboutPage = () =>{
 
 	return(
 		<div className="markBox">
-			<h2>COVID-19 Monitor App</h2>
+			{/* <h2>COVID-19 Monitor App</h2> */}
 			<div>
 				<ReactMarkdown source={readme} />
 			</div> 
