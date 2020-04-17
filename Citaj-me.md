@@ -10,7 +10,7 @@
 ## Употребени се:
 
 - [react-redux](https://github.com/reduxjs/react-redux)
-
+  
 - [Material Design Icons](https://materialdesignicons.com/)
 
 - [Google fonts](https://fonts.google.com/)
