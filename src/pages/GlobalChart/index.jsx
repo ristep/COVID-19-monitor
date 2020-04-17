@@ -109,7 +109,7 @@ const ChartGlobal = () => {
 			<Icon className="chartIcon" onClick={togleType} path={ ctp==='line' ? mdiChartBar : mdiChartLine } title={"Change chart type"} /> 
 			<div className="chartLegend">
 					{chartConfig.data.datasets.map( x => 
-						<div className="chartLg" style={{borderColor: x.borderColor, backgroundColor: x.backgroundColor, color:x.borderColor }}>
+						<div key={x.label} className="chartLg" style={{borderColor: x.borderColor, backgroundColor: x.backgroundColor, color:x.borderColor }}>
 							<Trans>{x.label}</Trans>
 						</div> 
 					)}

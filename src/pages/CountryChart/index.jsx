@@ -56,7 +56,7 @@ const CountryChart = () =>{
 	}
 	
 	const keyHandle = (ev) => {
-		console.log(ev.key)
+		// console.log(ev.key)
 		switch(ev.key){
 			case 'ArrowUp': 
 				if(index>0)

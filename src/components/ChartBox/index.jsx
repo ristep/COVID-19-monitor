@@ -78,7 +78,8 @@ const ChartBox = () => {
       const newChartInstance = new Chartjs(chartContainer.current, chartConfig);
       setChartInstance(newChartInstance);
     }
-  }, [chartContainer, ctp, trn, chartInstance]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chartContainer, ctp, trn]);
 	
  	useEffect( () =>{
 		if(chartInstance){
@@ -89,11 +90,12 @@ const ChartBox = () => {
 			chartInstance.data.datasets[3].data = history.active;
 			chartInstance.update();
 		}
-	},[history,chartInstance]);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	},[history]);
 
 	const togleType = () => {
 		setCtp( ctp==='bar' ? 'line' : 'bar' );  
-		console.log(ctp);
+		// console.log(ctp);
   };
 
   return (
@@ -101,7 +103,7 @@ const ChartBox = () => {
 			<Icon className="chartIcon" onClick={togleType} path={ ctp==='line' ? mdiChartBar : mdiChartLine } title={"Change chart type"} /> 
 			<div className="chartLegend">
 					{chartConfig.data.datasets.map( x => 
-						<div className="chartLg" style={{borderColor: x.borderColor, backgroundColor: x.backgroundColor, color:x.borderColor }}>
+						<div key={x.label} className="chartLg" style={{borderColor: x.borderColor, backgroundColor: x.backgroundColor, color:x.borderColor }}>
 							<Trans>{x.label}</Trans>
 						</div> 
 					)}

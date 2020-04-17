@@ -40,10 +40,10 @@ function Table({ columns, data }) {
     <>
       <table {...getTableProps()}>
         <thead>
-          {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()}><Trans>{column.render('Header')}</Trans></th>
+          {headerGroups.map((headerGroup,i) => (
+            <tr key={i}{...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column,i) => (
+                <th key={i} {...column.getHeaderProps()}><Trans>{column.render('Header')}</Trans></th>
               ))}
             </tr>
           ))}
@@ -52,9 +52,9 @@ function Table({ columns, data }) {
           {page.map((row, i) => {
             prepareRow(row)
             return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map(cell => {
-                  return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+              <tr key={row.country_name} {...row.getRowProps()}>
+                {row.cells.map((cell,i) => {
+                  return <td key={i} {...cell.getCellProps()}>{cell.render('Cell')}</td>
                 })}
               </tr>
             )
@@ -102,8 +102,8 @@ function Table({ columns, data }) {
             setPageSize(Number(e.target.value))
           }}
         >
-          {[10, 20, 30, 40, 50].map(pageSize => (
-            <option key={pageSize} value={pageSize}>
+          {[10, 20, 30, 40, 50].map((pageSize,i) => (
+            <option key={i} value={pageSize}>
               Show {pageSize}
             </option>
           ))}
@@ -198,7 +198,7 @@ function CountriesTable() {
 	}, [dispatch, reLoad]);
 
   return (
-    <div className='page' style={ { maxWidth: "640px", minWidth: "500px" } }>
+    <div className='page'>
       <Table columns={columns} data={worldCountries} />
 			{/* <ReactJson src={tetra} /> */}
     </div>

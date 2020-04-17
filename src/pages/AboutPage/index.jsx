@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import axios from "axios";
 
 const axParam = {
-	baseURL: "https://raw.githubusercontent.com/ristep/COVID-19-monitor/master/README.md",
+	baseURL: "https://raw.githubusercontent.com/ristep/COVID-19-monitor/master/Citaj.me",
 	headers: {
 		"Content-type": "application/text"
 	}

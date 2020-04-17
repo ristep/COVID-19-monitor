@@ -60,7 +60,6 @@ var chartConfig = {
 	}
 };
 
-
 const HomePage = () => {
   const [chartInstance, setChartInstance] = useState(null);
 	const [ ctp, setCtp ] = useState('line') 
@@ -133,10 +132,10 @@ const HomePage = () => {
 				<div className="stickerTitle"><Trans>Graph style</Trans></div>
 				<Icon className="chartIcon" onClick={togleType} path={ ctp==='line' ? mdiChartBar : mdiChartLine } title={"Change chart type"} /> 
 			</div>	 */}
-			<div className="sticker">
+			<div className="legendBox">
 				{/* <div className="stickerTitle"><Trans>Legent</Trans></div> */}
 				{chartConfig.data.datasets.map( x => 
-					<div className="chartLg" style={{borderColor: x.borderColor, backgroundColor: x.backgroundColor, color:x.borderColor }}>
+					<div key={x.label} className="chartLg" style={{borderColor: x.borderColor, backgroundColor: x.backgroundColor, color:x.borderColor }}>
 						<Trans>{x.label}</Trans>
 					</div> 
 				)}
