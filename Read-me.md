@@ -14,4 +14,4 @@
 
 - [Google fonts](https://fonts.google.com/)
 
-and other staf see ***package.json***
+For other staf see ***package.json***

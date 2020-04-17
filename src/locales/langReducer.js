@@ -6,9 +6,9 @@ import mkd from "../img/iconfinder_Macedonia-Flag_32270.png"
 import ukd from "../img/iconfinder_United-Kingdom-flag_32363.png"
 
 const initialState = {
-	lang: "en",
+	language: "en",
 	index: 0, 
-	langList: ['en','mk'],
+	langList: ["en","mk"],
 	flags: [ ukd, mkd ],
 	dictionary:{
 		en:{
