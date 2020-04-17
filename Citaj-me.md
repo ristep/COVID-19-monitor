@@ -1,7 +1,7 @@
 
 # COVID19 - Монитор апликација
 
-Програмчето е отворен ссофтвер со [MIT лиценца](https://github.com/ristep/COVID-19-monitor/blob/master/LICENSE).
+Програмчето е отворен софтвер со [MIT лиценца](https://github.com/ristep/COVID-19-monitor/blob/master/LICENSE).
 
 Комплетен изворен код може да се најде [тука](https://github.com/ristep/COVID-19-monitor).
 
