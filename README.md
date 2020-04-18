@@ -1,3 +1,28 @@
+# COVID19 - Monitor application
+
+Working instalation: [covid19.sman.cloud](https://covid19.sman.cloud)
+
+Source code of the API used in this application is [COVID19-API](https://github.com/ristep/COVID19-API)  
+
+Several public API is used as data sources:
+
+[Coronavirus monitor API](https://rapidapi.com/astsiatsko/api/coronavirus-monitor/)
+
+[covidapi.info](https://covidapi.info/)
+
+[www.worldometers.info/coronavirus/](https://www.worldometers.info/coronavirus/)
+
+## Used:
+
+- [react-redux](https://github.com/reduxjs/react-redux)
+  
+- [Material Design Icons](https://materialdesignicons.com/)
+
+- [Google fonts](https://fonts.google.com/)
+
+For other staf see ***package.json***
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
