@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import axios from "axios";
 import { useLanguage } from "locales/langReducer";
-import ReactJson from "react-json-view";
 
 const axParam = {
 	baseURL: "https://raw.githubusercontent.com/ristep/COVID-19-monitor/master/",
