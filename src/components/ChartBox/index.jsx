@@ -65,6 +65,7 @@ const chartConfig = {
 const ChartBox = () => {
 	// const tran = useTranslation();
 	const [ ctp, setCtp ] = useState('line'); 
+	const [ cnt, setCnt ] = useState(0);
 	const { data, history } = useCountryData();
   const chartContainer = useRef(null);
   const [chartInstance, setChartInstance] = useState(null);
@@ -79,7 +80,7 @@ const ChartBox = () => {
       setChartInstance(newChartInstance);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [chartContainer, ctp, trn]);
+  }, [chartContainer, ctp, trn, cnt ]);
 	
  	useEffect( () =>{
 		if(chartInstance){
@@ -89,6 +90,7 @@ const ChartBox = () => {
 			chartInstance.data.datasets[2].data = history.recovered;
 			chartInstance.data.datasets[3].data = history.active;
 			chartInstance.update();
+			setCnt(cnt+1);
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	},[history]);
@@ -99,7 +101,7 @@ const ChartBox = () => {
   };
 
   return (
-    <div className="page">
+    <>
 			<Icon className="chartIcon" onClick={togleType} path={ ctp==='line' ? mdiChartBar : mdiChartLine } title={"Change chart type"} /> 
 			<div className="chartLegend">
 					{chartConfig.data.datasets.map( x => 
@@ -119,11 +121,11 @@ const ChartBox = () => {
 					<div><Trans>Deaths</Trans>: {data.deaths}</div>
 					<div><Trans>New Cases</Trans>: {data.new_cases}</div>
 					<div><Trans>Recovered</Trans>: {data.total_recovered}</div>
-					<div><Trans>Last Report</Trans>: {data.statistic_taken_at}</div>
+					<div><Trans>Last Report</Trans>: {data.statistic_taken_at} cnt={cnt}</div>
 				</div>
 			</div> 	
 			}	
-    </div>
+    </>
   );
 };
 

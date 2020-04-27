@@ -1,14 +1,4 @@
 
-.app {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-@media only screen and ( max-width: $mediaWidth ) {
-  .app {
-		justify-content: left;
-  }
-}
 body {
 	background-image: url("coronavirus.jpg");
 	background-size: auto;
@@ -24,12 +14,12 @@ svg{
 }	
 
 .page {
-	max-width: 1000px;
 	display: flex;
-	flex: content;
-	align-content: center;
+	align-content: space-around;
 	flex-direction: row;
 	flex-wrap: wrap;
+	width: 98%;
+	max-width: 1000px;
 	margin: 0px;
 	padding: 8px;
 	background-color: $boxDefColor;

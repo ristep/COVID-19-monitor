@@ -6,6 +6,7 @@ import { mdiChartBar, mdiChartLine } from "@mdi/js";
 import { useDispatch } from "react-redux";
 import { prepareDataAction, executeDataAction } from "redux/actions";
 import { Trans } from "locales/Trans";
+import { useDictionary } from "locales/langReducer";
 // import { useDictionary, useTranslate } from "locales/langReducer";
 
 var chartConfig = {
@@ -60,12 +61,14 @@ var chartConfig = {
 };
 
 const ChartGlobal = () => {
-	const [ ctp, setCtp ] = useState('line') 
+	const [ ctp, setCtp ] = useState('line');
+	const [ cnt, setCnt ] = useState(0);
 	const { history } = useGlobalHistory();
   const chartContainer = useRef(null);
   const [chartInstance, setChartInstance] = useState(null);
 	const {cases, deaths, total_recovered, new_cases, statistic_taken_at} = useWorldTotal();
 	const dispatch = useDispatch();
+	const trn = useDictionary();
 	
 	useEffect(() => {
     if (chartContainer && chartContainer.current) {
@@ -75,7 +78,7 @@ const ChartGlobal = () => {
       setChartInstance(newChartInstance);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [chartContainer,ctp]);
+  }, [chartContainer, trn, ctp, cnt]);
 	
  	useEffect( () =>{
 		if(chartInstance){
@@ -85,8 +88,10 @@ const ChartGlobal = () => {
 			chartInstance.data.datasets[2].data = history.recovered;
 			chartInstance.data.datasets[3].data = history.active;
 			chartInstance.update();
+			setCnt(cnt+1);
 		}
-	},[history,chartInstance]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	},[history] );
 
 	useEffect(() => {
 		dispatch(prepareDataAction({ dataSet: "worldTotal", dataAction:"fetch"}))

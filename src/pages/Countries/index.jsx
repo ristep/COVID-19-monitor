@@ -41,9 +41,9 @@ function Table({ columns, data }) {
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup,i) => (
-            <tr key={i}{...headerGroup.getHeaderGroupProps()}>
+            <tr className='trTitle' key={i}{...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column,i) => (
-                <th key={i} {...column.getHeaderProps()}><Trans>{column.render('Header')}</Trans></th>
+                <th className='thTitle' key={i} {...column.getHeaderProps()}><Trans>{column.render('Header')}</Trans></th>
               ))}
             </tr>
           ))}
@@ -52,7 +52,7 @@ function Table({ columns, data }) {
           {page.map((row, i) => {
             prepareRow(row)
             return (
-              <tr key={row.country_name} {...row.getRowProps()}>
+              <tr className='trRow' key={row.country_name} {...row.getRowProps()}>
                 {row.cells.map((cell,i) => {
                   return <td key={i} {...cell.getCellProps()}>{cell.render('Cell')}</td>
                 })}
@@ -198,7 +198,7 @@ function CountriesTable() {
 	}, [dispatch, reLoad]);
 
   return (
-    <div className='page'>
+    <div className='pageTable'>
       <Table columns={columns} data={worldCountries} />
 			{/* <ReactJson src={tetra} /> */}
     </div>

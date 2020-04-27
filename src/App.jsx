@@ -29,8 +29,8 @@ function App() {
 	// [hasTokenError]);
 
 	return (
-    <div className="app">
-			<header className="App-header">
+    <div>
+			<header>
 				<AppNavBar></AppNavBar>
 			</header>
 			<NaviGator />
