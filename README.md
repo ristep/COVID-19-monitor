@@ -1,6 +1,6 @@
 # COVID19 - Monitor application
 
-Working instalation: [covid19.sman.cloud](https://covid19.sman.cloud)
+## Working instalation: [covid19.sman.cloud](https://covid19.sman.cloud)
 
 Source code of the API used in this application is [COVID19-API](https://github.com/ristep/COVID19-API)  
 
