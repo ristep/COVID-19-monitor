@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { useSelector } from "react-redux";
 import { getPage } from "redux/selectors";
 
@@ -9,10 +9,14 @@ import Countries from "pages/Countries";
 import CountryChart from "pages/CountryChart";
 import GlobalChart from "pages/GlobalChart";
 import AboutPage from "pages/AboutPage";
-import TwitterList from "pages/twiter";
 import TestChart from "pages/victoryChart";
-import WhoNews from "pages/WhoNews";
-import MzNews from "pages/MzNews";
+// import WhoNews from "pages/WhoNews";
+// import MzNews from "pages/MzNews";
+// import TwitterList from "pages/twiter";
+
+const WhoNews = lazy(() => import('pages/WhoNews'));
+const MzNews = lazy(() => import('pages/MzNews'));
+const TwitterList = lazy(() => import('pages/twiter'));
 
 export const routes = {
 	home: <HomePage />,
@@ -43,7 +47,11 @@ export const routeTitle = (route) => (
 
 export const NaviGator = () => {
 	const { page }  = useSelector(getPage);
-	return(	routes[page] );
+	return(	
+		<Suspense fallback={<div>Suspense Loading ...</div>}>
+			{routes[page]} 
+		</Suspense>
+	);
 }
 
 export const validPages = Object.keys(routes);

@@ -14,7 +14,7 @@ function App() {
 	// localStorage.setItem('Language','mk');
 	dispatch(setLanguage({lang:'en'}));
 	//dispatch(nextLanguage())
-	
+	 
 	useEffect( () => {
 		dispatch(navigateToUrl(window.location.hash));
 		window.onhashchange = () => dispatch(navigateToUrl(window.location.hash));
