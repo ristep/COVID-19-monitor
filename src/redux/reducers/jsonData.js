@@ -172,7 +172,7 @@ export const initialState = () => {
 				keyData: { id: undefined }
 			}
 		},
-	}
+	};
 };
 
 export default (state = initialState(), action) =>
@@ -226,7 +226,7 @@ export default (state = initialState(), action) =>
 			case SUBMIT_REQUEST_ERROR:
 				draft.isFetching = false;
 				draft.hasError = true;
-				draft[action.payload.dataSet] = { ...draft[action.payload.dataSet], error: true, errorData: action.payload.error }
+				draft[action.payload.dataSet] = { ...draft[action.payload.dataSet], error: true, errorData: action.payload.error };
 				break;
 			
 			case INDEX_INCRMENT:
@@ -239,7 +239,7 @@ export default (state = initialState(), action) =>
 
 			default:
 			 	return draft;
-		};
+		}
 		// return draft;
 	});
 
