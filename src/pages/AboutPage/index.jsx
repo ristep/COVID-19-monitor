@@ -18,12 +18,12 @@ const AboutPage = () =>{
 	const [rdm, setRdm] = useState('Read-me.md');
 	
 	useEffect(() => {
-		setRdm( language==='mk' ? 'Citaj-me.md' : 'Read-me.md') ;
+		setRdm( language==='mk' ? 'Citaj-me.md' : 'Read-me.md');
 		axi.get( rdm )
-    .then((response) => { setReadme(response.data)})
+    .then((response) => { setReadme(response.data);})
     .catch((error) => {
         console.warn(error);
-    })
+    });
 	},[language, rdm]);
 
 	return(

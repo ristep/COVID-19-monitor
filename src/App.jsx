@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { navigateToUrl, setLanguage } from 'redux/actions';
 // import { useIsLoggedIn, useTokenError } from 'redux/selectorHooks';
 import { NaviGator } from "routes";
-//gittest02 maj 10 2020
+
 function App() { 
 	const dispatch = useDispatch();
 	// const lioggedIn = useIsLoggedIn();

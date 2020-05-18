@@ -92,16 +92,16 @@ export const executeDataAction = (dataSet) => {
 			auToken: state.userToken.tokenData.auToken,
 			request: jsonQuery,
 			callBack: (udat) => { 
-				dispatch(submitRequestSucces({ ...udat, dataSet: dataSet })) 
+				dispatch(submitRequestSucces({ ...udat, dataSet: dataSet })); 
 			},
 			callError:(err) => {
-				dispatch(submitRequestError({error: err, dataSet: dataSet }))
+				dispatch(submitRequestError({error: err, dataSet: dataSet }));
 				if(err.code===401 && err.name==='tokenator')
 					dispatch(fetchTokenError(err));
 			}
-		})
-	}
-}
+		});
+	};
+};
 
 export const submitJsonQuery = (args) => {
 	var { dataSet, jsonQuery } = args;
