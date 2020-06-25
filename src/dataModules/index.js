@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axParams = {
-	baseURL: "https://sman.cloud/covid19-api/",
+	baseURL: "https://pan.sman.cloud/covid19-api/",
 	headers: {
 		"Authorization": "dummy-key",
 		"Content-type": "application/json"

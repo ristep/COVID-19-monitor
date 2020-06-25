@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./index.css";
+// import "./index.css"; 
 
 const fadeInArr = [
   "tiltInFwdTr 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",

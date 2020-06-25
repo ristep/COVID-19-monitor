@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
-import  Button  from '../button';
-import { useSelector } from "react-redux";
-import { getColors } from "redux/reducers/theme";
-import ReactJson from 'react-json-view';
 
-import "./index.scss";
+// import "./index.scss";
 import { imgUrl } from "dataModules";
 
 export const Card = (props) => {

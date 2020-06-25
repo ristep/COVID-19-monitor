@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSelector } from "react-redux";
 import { getColors } from 'redux/reducers/theme';
-import './index.scss';
+// import './index.scss';
 
 const NavBar = (props) => {
 	const color = useSelector(getColors);
