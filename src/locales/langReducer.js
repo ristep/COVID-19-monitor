@@ -35,7 +35,7 @@ const initialState = {
 			"Active Cases":"Активни",
 			"New cases": "Нови",
 			"Country name":"Држава",
-			"Deads": "Починати",
+			"Deads": "Починати", 
 			"New Deaths": "Ново поч.",
 			"MZ news feed": "МЗ новости",
 			"WHO news feed": "СЗО новости",
