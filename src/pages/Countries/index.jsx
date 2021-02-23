@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { prepareDataAction, executeDataAction } from 'redux/actions';
 import { group3 } from 'functions';
 import { Trans } from 'locales/Trans';
+import useWinSize from 'hooks/winSize';
 
 function Table({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
@@ -14,9 +15,7 @@ function Table({ columns, data }) {
     getTableBodyProps,
     headerGroups,
     prepareRow,
-    page, // Instead of using 'rows', we'll use page,
-    // which has only the rows for the active page
-    // The rest of these things are super handy, too ;)
+    page, 
     canPreviousPage,
     canNextPage,
     pageOptions,
@@ -35,7 +34,6 @@ function Table({ columns, data }) {
 		usePagination
   );
 
-  // Render the UI for your table
   return (
     <>
       <table {...getTableProps()}>
@@ -61,10 +59,6 @@ function Table({ columns, data }) {
           })}
         </tbody>
       </table>
-      {/* 
-        Pagination can be built however you'd like. 
-        This is just a very basic UI implementation:
-      */}
       <div className="pagination">
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {'<<'}
@@ -133,11 +127,14 @@ const countryClick = (ev) => {
 }
 
 function CountriesTable() {
+  const winSize =  useWinSize();
+
   const columns = React.useMemo(
     () => [
       {
         Header: 'Countries',
-        columns: [
+        columns: winSize.width>640 ? 
+        [
           {
 						Header: 'Country name',
 						accessor: n => (
@@ -162,7 +159,7 @@ function CountriesTable() {
 							<div className='rightAlign'>{group3(n.deaths)}</div>
 						)
           },
-					{
+          {
 						Header: 'New Deaths',
 						accessor: n => (
 							<div className='rightAlign'>{group3(n.new_deaths)}</div>
@@ -180,10 +177,36 @@ function CountriesTable() {
 							<div className='rightAlign'>{group3(n.total_recovered)}</div>
 						)
 					},
+        ]:
+        [
+          {
+						Header: 'Country name',
+						accessor: n => (
+							<div className='isLink' name={n.country_name} onClick={() => countryClick(n.country_name)}>{n.country_name}</div>
+						)
+					},
+          {
+						Header: 'Total Cases',
+						accessor: n => (
+							<div className='rightAlign'>{group3(n.cases)}</div>
+						)
+					},
+					{
+						Header: 'New Cases',
+						accessor: n => (
+							<div className='rightAlign'>{group3(n.new_cases)}</div>
+						)
+				 },
+          {
+            Header: 'Total Deads',
+						accessor: n => (
+							<div className='rightAlign'>{group3(n.deaths)}</div>
+						)
+          },
         ],
       },
     ],
-    []
+    [winSize.width]
   )
 	const dispatch = useDispatch();
 	const worldCountries = useWorldCountries();

@@ -1,68 +1,73 @@
 .pageTable {
-	display: flex;           /* turn flexbox on */
-	justify-content: center; /* center horizontally */
-	align-items: center;     /* center vertically */
-	flex-direction: row;
-	flex-wrap: wrap;
-
-	max-width: 1000px;
-	margin: 0px;
-	padding: 8px;
-	background-color: $boxDefColor;
-	box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.484);
-	border-radius: 12px;
-	color: $pageDefaultColor;
+    display: inline-table;
+    /* turn flexbox on */
+    justify-content: center;
+    /* center horizontally */
+    align-items: center;
+    /* center vertically */
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0px;
+    padding: 8px;
+    background-color: $boxDefColor;
+    box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.484);
+    border-radius: 12px;
+    color: $pageDefaultColor;
 }
 
 // Table styling
 table {
-	border-spacing: 0;
-	.thTitle{
-		border-bottom: 3px double $tableLineColor;
-	}
-	.trTitle {
-		color: rgb(11, 83, 39);
-		font-size: large;
-		&:nth-child(odd) {
-			background: darken($color: $tableBacgroundColor, $amount: 30);
-		}
-		&:nth-child(even) {
-			background: lighten($color: $tableBacgroundColor, $amount: 10);
-		}
-	}
-	.trRow {
-		color: white;
-		&:nth-child(even) {
-			background: $tableBacgroundColor;
-		}
-		&:nth-child(odd) {
-			background: darken($color: $tableBacgroundColor, $amount: 20);
-		}
-		&:hover {
-			color: rgb(250, 250, 160);
-			text-shadow: 2px 2px 2px rgb(15, 7, 0);
-		}
-	}
-	th, 
-	td {
-		margin: 0;
-		padding: 0.6rem;
-		// border-bottom: 1px solid $tableLineColor;
-		border-right: 1px solid $tableLineColor;
-	}
-}
-.pagination {
-	padding: 0.5rem;
-}
-.rightAlign {
-	text-align: right;
+    border-spacing: 0;
+    .thTitle {
+        border-bottom: 3px double $tableLineColor;
+    }
+    .trTitle {
+        color: rgb(11, 83, 39);
+        font-size: large;
+        &:nth-child(odd) {
+            background: darken($color: $tableBacgroundColor, $amount: 30);
+        }
+        &:nth-child(even) {
+            background: lighten($color: $tableBacgroundColor, $amount: 10);
+        }
+    }
+    .trRow {
+        color: white;
+        &:nth-child(even) {
+            background: $tableBacgroundColor;
+        }
+        &:nth-child(odd) {
+            background: darken($color: $tableBacgroundColor, $amount: 20);
+        }
+        &:hover {
+            color: rgb(250, 250, 160);
+            text-shadow: 2px 2px 2px rgb(15, 7, 0);
+        }
+    }
+    th,
+    td {
+        margin: 0;
+        padding: 0.6rem;
+        // border-bottom: 1px solid $tableLineColor;
+        border-right: 1px solid $tableLineColor;
+    }
 }
 
-.isLink{
-	color: white;
-	text-decoration: underline;
-	&:hover{
-		color: maroon;
-	}
+.pagination {
+    padding: 0.5rem;
 }
+
+.rightAlign {
+    text-align: right;
+}
+
+.isLink {
+    color: white;
+    text-decoration: underline;
+    &:hover {
+        color: maroon;
+    }
+}
+
 //End table
